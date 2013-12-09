@@ -1,0 +1,34 @@
+<div >
+<h1>Entrada albaran</h1>
+<form>
+	<label class="control-label" for="search">Cod-Barras</label>
+	<input type="text" id="search" ng-model="albaran" class="input-medium "></input>
+	<label class="control-label">Proveedor</label><input type="text" class="input-small" ng-model="alb.codProveedor"/><input type="text" class="input-medium" ng-model="alb.proveedor"/>
+	<label>CodAlbaran</label><input type="text" ng-model="alb.codAlbaran"/>
+	<label>Fecha</label><input type="text" ng-model="alb.fecha"/>
+	<label>Estado</label><input type="text" ng-model="alb.estado"/>
+	<label>Transportista</label><input type="text" ng-model="alb.transportista"/>
+	<label>Alb.Transportista</label><input type="text" ng-model="alb.albTransportista"/>
+	<label>Coste</label><input type="text" ng-model="alb.coste"/>
+</form>
+<table ng-table="tableParams" class="table">
+    <tr ng-repeat="albaran in $data">
+        <td data-title="'Proveedor'" sortable="proveedor">
+            {{albaran.proveedor}}
+        </td>
+        <td data-title="'Fecha'" sortable="'fecha'">
+            {{albaran.fecha}}
+        </td>
+         <td data-title="'Fecha'" sortable="'fecha'">
+            <a ng-href="#/detalleAlbaran/{{albaran.proveedor}}" class="btn">Buscar</a>
+        </td>
+    </tr>
+</table>
+<a class="btn btn-small" href="#"><i ></i>Arriba</a>
+<a class="btn btn-small" href="#"><i ></i>Abajo</a>
+<button ng-click="search()" class="btn">Buscar</button>
+<button ng-click=""  class="btn btn-success">Seleccionar</button>
+<button ng-click="" class="btn btn-danger">Salir</button>
+</div>
+
+<p>{{search}</p>

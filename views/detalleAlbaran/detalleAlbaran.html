@@ -1,0 +1,26 @@
+
+<h1>Detalle albaran</h1>
+	<div class="roundedOne">
+    	<input id="selectAll" type="checkbox" class="roundedOne" ng-model="checkboxes.checked" id="select_all" name="filter-checkbox" value="" />
+    	<label for="selectAll">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SelectAll</label>
+    </div>
+<table ng-table="tableParams" class="table">
+    <tr ng-repeat="linea in $data">
+        <td data-title="'Linea'" sortable="id">
+            {{linea.id}}
+        </td>
+        <td data-title="'Q'" sortable="'Q'">
+            {{linea.Q}}
+        </td>
+         <td data-title="''" sortable="''">
+         	<div class="roundedOne">
+           	 <input id="linea{{linea.id}}" type="checkbox" class="roundedOne" ng-model="checkboxes.items[linea.id]" />
+           	 	<label for="linea{{linea.id}}"></label>
+			
+        </td>
+    </tr>
+</table>
+
+<a ng-href="#/entradaAlbaran" class="btn btn-danger">Volver</a>
+
+{{checkboxes.items}} 
